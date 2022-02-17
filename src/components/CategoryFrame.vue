@@ -2,7 +2,7 @@
   <div class="col-md-12 text-center tablesCa">
     <h1 class="mb-5">{{ categoryName }}</h1>
     <img
-      :src="`https://api.hesamchoob.ir/images/${categoryImage}`"
+      :src="`https://apiaddress/images/${categoryImage}`"
       class="img-fluid"
       id="table-thumbnail"
     />

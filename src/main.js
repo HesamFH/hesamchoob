@@ -18,7 +18,7 @@ Vue.use(Vuex);
 Vue.use(VueCookies);
 Vue.use(VueEllipseProgress);
 
-Vue.http.options.root = "https://api.hesamchoob.ir/api/";
+Vue.http.options.root = "https://apiaddress/api/";
 
 Vue.http.interceptors.push(function (request) {
   request.headers.set(

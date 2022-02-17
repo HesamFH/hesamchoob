@@ -1,31 +1,29 @@
 <template>
-  <div class="row p-4" v-if="isLoaded">
-    <div class="text-center">
-      <h1 class="mb-5">{{ categoryName.name }}</h1>
-      <carousel
-        id="carousel-1"
-        :loop="true"
-        :autoplay="true"
-        :per-page="1"
-        :rtl="true"
-        :autoplayTimeout="3000"
-        :navigationEnabled="true"
-        :centerMode="true"
-        style="text-shadow: 1px 1px 2px #333"
+  <div class="p-4 justify-content-center" v-if="isLoaded">
+    <h1 class="mb-5 text-center">{{ categoryName.name }}</h1>
+    <carousel
+      id="carousel-1"
+      :loop="true"
+      :autoplay="true"
+      :per-page="1"
+      :rtl="true"
+      :autoplayTimeout="3000"
+      :navigationEnabled="true"
+      :center-mode="true"
+      style="text-shadow: 1px 1px 2px #333; display: block"
+    >
+      <slide
+        v-for="(item, index) in Pictures"
+        :key="index"
+        class="d-flex justify-content-center align-items-center"
       >
-        <slide
-          v-for="(item, index) in Pictures"
-          :key="index"
-          class="carouselPic"
-        >
-          <img
-            :src="`https://api.hesamchoob.ir/images/${item.imagePath}`"
-            class="img-fluid"
-            alt="Product Image"
-          />
-        </slide>
-      </carousel>
-    </div>
+        <img
+          :src="`https://apiaddress/images/${item.imagePath}`"
+          class="img-fluid slider-img"
+          alt="Product Image"
+        />
+      </slide>
+    </carousel>
   </div>
   <div class="d-flex align-items-center justify-content-center" v-else>
     <vue-ellipse-progress
@@ -71,4 +69,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.slider-img {
+  max-height: 70vh;
+}
+</style>
